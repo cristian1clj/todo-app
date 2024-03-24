@@ -1,3 +1,7 @@
+.App {
+    position: relative;
+}
+
 .main-control {
     width: 28%;
     height: 100vh;
@@ -23,6 +27,7 @@ header h1 {
     margin: 0 auto;
     padding: 40px 0 15px 0;
     font-size: 2.5rem;
+    color: #46a09e;
 }
 
 .one-line-form {
@@ -89,7 +94,10 @@ header h1 {
 
 .new-list {
     width: 90%;
-    padding-top: 10px;
+    height: 61.11px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     background-color: #202833;
     border-radius: 25px 20px 0 0;
     border: 2px solid #0b0c10;
@@ -97,19 +105,19 @@ header h1 {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    transition: height 1s ease;
 }
 
 .new-list .icon {
     width: 20px;
 }
 
-.new-list:hover .form-add-list {
-    display: flex;
+.new-list:hover {
+    height: 110px;
 }
 
 .form-add-list {
-    margin-top: 10px;
-    display: none;
+    margin-bottom: -35px;
 }
 
 .form-add-list input, .form-add-list button {
@@ -122,7 +130,7 @@ header h1 {
 }
 
 .new-list:hover .new-list-button .icon {
-    animation: rotateIcon 2s infinite;
+    animation: rotateIcon 1s linear;
 }
 
 @keyframes rotateIcon {
@@ -130,7 +138,7 @@ header h1 {
         transform: rotate(0deg);
     }
     100% {
-        transform: rotate(360deg);
+        transform: rotate(180deg);
     }
 }
 
@@ -142,9 +150,38 @@ header h1 {
 }
 
 .new-list-button:hover {
-    cursor: pointer;
+    cursor: default;
 }
 
 .new-list-button .icon {
     margin-left: 20px;
+}
+
+.message-error {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #46a09e;
+    width: 30%;
+    min-width: 300px;
+    max-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.message-error p:hover {
+    cursor: default;
+}
+
+.message-error button {
+    background-color: #46a09e;
+    border: 0;
+}
+
+.message-error button:hover {
+    cursor: pointer;
 }
