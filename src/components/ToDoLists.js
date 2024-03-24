@@ -1,12 +1,12 @@
 import ToDoListItem from "./ToDoListItem";
 
-const ToDoLists = ({ toDo }) => {
+const ToDoLists = ({ listNames, deleteList }) => {
     return (
         <section className="todo-list">
             {
-                toDo.length === 0
+                listNames.length === 0
                 ? <p>You dont have lists yet...</p>
-                : toDo.map(list => <ToDoListItem listName={list} />)
+                : listNames.map(name => <ToDoListItem listName={name} deleteList={deleteList} />)
             }
         </section>
     );

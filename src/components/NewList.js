@@ -1,13 +1,13 @@
 import FormAddList from "./FormAddList";
 
-const NewList = ({ setToDo, setError }) => {
+const NewList = ({ addList }) => {
     return (
         <section className="new-list">
             <div className="new-list-button">
                 <p>Add new list</p>
                 <img className="icon" src="/plusicon.png" alt="Plus icon" />
             </div>
-            <FormAddList setToDo={setToDo} setError={setError} />
+            <FormAddList addList={addList} />
         </section>
     );
 }
