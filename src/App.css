@@ -1,38 +1,150 @@
-.App {
-  text-align: center;
+.main-control {
+    width: 28%;
+    height: 100vh;
+    min-width: 300px;
+    background-color: #0b0c10;
+    position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button {
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.icon {
+    width: 29px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header {
+    width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+header h1 {
+    width: 75%;
+    margin: 0 auto;
+    padding: 40px 0 15px 0;
+    font-size: 2.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.one-line-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.one-line-form input, .one-line-form button {
+    background-color: #202833;
+    border: 1px solid #c5c6c8;
+}
+
+.one-line-form input {
+    margin: 0;
+    width: 55%;
+    height: 30px;
+    border-right: 0;
+    border-radius: 20px 0 0 20px;
+    padding-left: 15px;
+    color: #c5c6c8;
+}
+
+.one-line-form input:focus {
+    outline: none;
+}
+
+.one-line-form button {
+    border-left: 0;
+    border-radius: 0 20px 20px 0;
+    padding-right: 5px;
+}
+
+.one-line-form button:hover {
+    cursor: pointer;
+}
+
+.todo-list {
+    margin: 20px 30px;
+    max-height: 60%;
+    overflow-y: scroll;
+    border-radius: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #202833 transparent;
+}
+
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 40px;
+    background-color: #202833;
+    border: 1px solid #0b0c10;
+}
+
+.todo-list-item button {
+    background-color: #202833;
+    border: 0;
+}
+
+.todo-list-item .icon {
+    width: 20px;
+}
+
+.new-list {
+    width: 90%;
+    padding-top: 10px;
+    background-color: #202833;
+    border-radius: 25px 20px 0 0;
+    border: 2px solid #0b0c10;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.new-list .icon {
+    width: 20px;
+}
+
+.new-list:hover .form-add-list {
+    display: flex;
+}
+
+.form-add-list {
+    margin-top: 10px;
+    display: none;
+}
+
+.form-add-list input, .form-add-list button {
+    background-color: #0b0c10;
+    border: 0;
+}
+
+.form-add-list button {
+    padding: 4.5px 8px 4.5px 0;
+}
+
+.new-list:hover .new-list-button .icon {
+    animation: rotateIcon 2s infinite;
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.new-list-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.new-list-button:hover {
+    cursor: pointer;
+}
+
+.new-list-button .icon {
+    margin-left: 20px;
 }
