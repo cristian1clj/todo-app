@@ -65,6 +65,10 @@ header h1 {
     cursor: pointer;
 }
 
+.form-search button:hover {
+    cursor: default;
+}
+
 .todo-list {
     margin: 20px 30px;
     max-height: 60%;
