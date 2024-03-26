@@ -1,35 +1,29 @@
-import Header from "./Header";
-import ToDoLists from "./ToDoLists";
-import NewList from "./NewList";
-import { useState } from "react";
+import Pendings from "./Pendings";
+import FormAddPending from "./FormAddPending";
 
-const MainControl = ({ toDo, setToDo, setError }) => {
-    const [searchedList, setSearchedList] = useState('');
-    const listNames = searchedList !== '' ? 
-                      toDo.filter(list => list.name.includes(searchedList)).map(list => list.name) : 
-                      toDo.map(list => list.name);
-
-    const addList = listName => {
-        const newList = { name: listName, elements: [] }
-
-        if (!toDo.some(list => list.name === listName)){
-            setToDo([...toDo, newList]);
-        } else {
-            setError('List name already exists');
-        }
-    }
-
-    const deleteList = listName => {
-        const newToDo = toDo.filter(list => list.name !== listName);
-        setToDo(newToDo);
-    }
+const MainControl = ({ setToDo, category }) => {
+    const pendings = [
+        { description: 'tender la cama', completed: false },
+        { description: 'cepillar dintes', completed: false },
+        { description: 'comer', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'aprender React', completed: false },
+        { description: 'tender la cama', completed: false }
+    ]
 
     return (
-        <aside className="main-control">
-            <Header setSearchedList={setSearchedList} />
-            <ToDoLists listNames={listNames} deleteList={deleteList} />
-            <NewList addList={addList} />
-        </aside>
+        <section className="main-control">
+            <h2>{ category.name.toUpperCase() }</h2>
+            <Pendings pendings={pendings} />
+            <FormAddPending />
+        </section>
     );
 }
 

@@ -1,12 +1,12 @@
-const Header = ({ setSearchedList }) => {
+const Header = ({ setSearchedCategory }) => {
     return (
         <header>
             <h1>ToDo</h1>
             <div className="form-search one-line-form">
                 <input 
                     type="text" 
-                    onChange={e => setSearchedList(e.target.value)}
-                    placeholder="search list..." 
+                    onChange={e => setSearchedCategory(e.target.value)}
+                    placeholder="search category..." 
                 />
                 <button type="button">
                     <img className="icon" src="/searchicon.png" alt="search icon" />
