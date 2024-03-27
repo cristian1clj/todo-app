@@ -7,7 +7,8 @@ const FormAddPending = ({ addPending }) => {
         e.preventDefault();
 
         if (newPending !== ''){
-            
+            addPending(newPending);
+            setNewPending('');
         }
     }
 

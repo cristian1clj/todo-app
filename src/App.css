@@ -108,7 +108,7 @@ header h1 {
 }
 
 .item-container .icon {
-    width: 20px;
+    width: 10px;
 }
 
 .new-category {
@@ -186,6 +186,7 @@ header h1 {
 
 .main-control h2 {
     font-size: 2.3rem;
+    font-weight: 300;
     padding: 0 100px;
     color: #46a09e;
 }
@@ -202,6 +203,24 @@ header h1 {
 
 .pending-item button {
     background-color: #0b0c10;
+}
+
+.pending-item:hover, .pending-item:hover button {
+    background-color: #15161a;
+}
+
+.completed-item, .completed-item button {
+    background-color: #0b1919;
+    border: 0;
+}
+
+.completed-item:hover, .completed-item:hover button {
+    background-color: #112727;
+    border: 0;
+}
+
+.completed-item p {
+    text-decoration-line: line-through;
 }
 
 .form-add-pending {

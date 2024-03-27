@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <SideControlMenu toDo={toDo} setToDo={setToDo} setError={setError} selectCategory={selectCategory} />
-      { currentCategory !== null ? <MainControl setToDo={setToDo} category={currentCategory} /> : null }
+      { currentCategory !== null ? <MainControl toDo={toDo} setToDo={setToDo} currentCategory={currentCategory} setError={setError} /> : null }
       { error !== '' ? <ErrorMessage error={error} setError={setError} /> : null }
     </div>
   );

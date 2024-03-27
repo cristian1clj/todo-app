@@ -1,11 +1,20 @@
-const PendingItem = ({ pending, deletePending }) => {
+const PendingItem = ({ pending, updatePendingState, deletePending }) => {
+    const handleCheckbox = e => {
+        pending.completed = !pending.completed;
+        updatePendingState(pending);
+    }
+
     const handleDeleteButton = e => {
-        deletePending(pending);
+        deletePending(pending.description);
     }
 
     return (
-        <div className="item-container pending-item">
-            <input type="checkbox" />
+        <div className={`item-container ${pending.completed ? 'completed-item' : 'pending-item'}`}>
+            <input 
+                type="checkbox" 
+                checked={pending.completed} 
+                onClick={handleCheckbox}
+            />
             <p>{ pending.description }</p>
             <button type="button" onClick={handleDeleteButton}>
                 <img className="icon" src="/xicon.png" alt="x icon" />
