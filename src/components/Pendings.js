@@ -5,7 +5,7 @@ const Pendings = ({ pendings, updatePendingState, deletePending }) => {
         <section className="list-container pending-list">
             {
                 pendings.length === 0
-                ? <p>You dont have pendings yet...</p>
+                ? <p>You dont have outstanding tasks yet...</p>
                 : pendings.map(pending => <PendingItem pending={pending} updatePendingState={updatePendingState} deletePending={deletePending} />)
             }
         </section>

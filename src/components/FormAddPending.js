@@ -18,7 +18,7 @@ const FormAddPending = ({ addPending }) => {
                 value={newPending} 
                 onChange={e => setNewPending(e.target.value)}
                 type="text" 
-                placeholder="new pending..." 
+                placeholder="new outstanding task..." 
             />
             <button type="submit">
                 <img className="icon" src="/plusicon.png" alt="plus icon" />
